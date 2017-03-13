@@ -2,6 +2,7 @@
 //Nathan Larsen A01532780
 //JavaScript Recursive Sequences
 //
+document.title = "Recursive Sequences";
 
 function fibSequence(n) {
     var value;

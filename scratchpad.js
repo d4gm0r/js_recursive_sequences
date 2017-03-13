@@ -177,6 +177,12 @@ style.textContent =
     "	border-style: solid;" +
     "}" +
     "" +
+    ".link {" +
+    "	border-color: rgb(0,255,0);" +
+    "	background:   rgb(60,180,60);" +
+    "	box-shadow: 1px 1px 2px rgba(0,200,0,0.4);" +
+    "}" +
+    "" +
     ".red {" +
     "	border-color: rgb(255,0,0);" +
     "	background:   rgb(180,60,60);" +
@@ -197,6 +203,19 @@ style.textContent =
 
 document.querySelector('body').appendChild(style);
 
+var link = function(){
+    var fib = "Fibonacci";
+    var fibLink = fib.link("https://oeis.org/A000045");
+
+    var pell = "Pell";
+    var pellLink = pell.link("https://oeis.org/A000129");
+
+    var trib = "Tribonacci";
+    var tribLink = trib.link("https://oeis.org/A000073");
+
+    document.write("For more information on these sequences: " + fibLink + ", " + pellLink + ", " + tribLink);
+}
+
 var divMakerMaker = function(color, id) {
     return function() {
         var div = document.createElement('div');
@@ -205,6 +224,7 @@ var divMakerMaker = function(color, id) {
         document.body.appendChild(div);
     }
 }
+
 
 var redDiv = divMakerMaker('red', 'fib');
 var greenDiv = divMakerMaker('green', 'pell');
@@ -217,3 +237,5 @@ blueDiv();
 fib(11, document.querySelector('.red'));
 pell(11, document.querySelector('.green'));
 trib(11, document.querySelector('.blue'));
+
+link();
